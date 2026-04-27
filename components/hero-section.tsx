@@ -51,7 +51,7 @@ export default function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-white/60 font-light tracking-wider mb-10 max-w-2xl animate-fade-in-up animation-delay-100">
-            Sanitär&nbsp;&nbsp;·&nbsp;&nbsp; Lüftung&nbsp;&nbsp;·&nbsp;&nbsp;Wasser
+            Sanitär&nbsp;&nbsp;·&nbsp;&nbsp; Lüftung&nbsp;&nbsp;·&nbsp;&nbsp;Wasseraufbereitung
           </p>
 
           {/* Description */}
