@@ -13,6 +13,8 @@ const services = [
 
 export default function KontaktSection() {
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+const [error, setError] = useState("")
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -29,10 +31,45 @@ export default function KontaktSection() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  setIsSubmitting(true)
+  setError("")
+
+  try {
+    const response = await fetch("https://formspree.io/f/xbdwlley", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        service: form.service,
+        message: form.message,
+      }),
+    })
+
+    if (!response.ok) {
+      throw new Error("Form submission failed")
+    }
+
     setSubmitted(true)
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      message: "",
+    })
+  } catch (err) {
+    setError("Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.")
+  } finally {
+    setIsSubmitting(false)
   }
+}
 
   return (
     <section id="kontakt" className="py-36 lg:py-48 bg-white overflow-hidden">
@@ -252,16 +289,17 @@ export default function KontaktSection() {
                   <p className="text-[oklch(0.65_0.01_250)] text-sm">
                     * Pflichtfelder
                   </p>
-                 <a
-                    href="mailto:info@gajo-haustechnik.ch"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[oklch(0.25_0.09_255)] text-white font-bold px-12 py-5 rounded-xl hover:bg-[oklch(0.20_0.08_255)] transition-all duration-300 shadow-lg shadow-[oklch(0.25_0.09_255)]/20 hover:shadow-xl hover:shadow-[oklch(0.25_0.09_255)]/25 hover:-translate-y-0.5 group"
-                  >
-                    Jetzt anfragen
-                    <Send
-                      size={20}
-                      className="group-hover:translate-x-1 transition-transform duration-300"
-                    />
-                  </a>
+                 <button
+  type="submit"
+  disabled={isSubmitting}
+  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[oklch(0.25_0.09_255)] text-white font-bold px-12 py-5 rounded-xl hover:bg-[oklch(0.20_0.08_255)] transition-all duration-300 shadow-lg shadow-[oklch(0.25_0.09_255)]/20 hover:shadow-xl hover:shadow-[oklch(0.25_0.09_255)]/25 hover:-translate-y-0.5 group disabled:opacity-60 disabled:cursor-not-allowed"
+>
+  {isSubmitting ? "Wird gesendet..." : "Jetzt anfragen"}
+  <Send
+    size={20}
+    className="group-hover:translate-x-1 transition-transform duration-300"
+  />
+</button>
                 </div>
               </form>
             )}
