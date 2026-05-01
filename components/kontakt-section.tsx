@@ -75,7 +75,21 @@ export default function KontaktSection() {
                   <div className="text-xl font-bold">+41 79 176 43 92</div>
                 </div>
               </a>
-
+              <a
+                href="mailto:info@gajo-haustechnik.ch"
+                className="flex items-start gap-5 group"
+              >
+                <div className="w-14 h-14 flex items-center justify-center bg-white/15 rounded-xl flex-shrink-0 group-hover:bg-white/25 group-hover:scale-110 transition-all duration-300">
+                  <Mail size={24} className="text-white" />
+                </div>
+                <div>
+                  <div className="text-white/55 text-xs uppercase tracking-[0.15em] font-semibold mb-1">
+                    E-Mail
+                  </div>
+                  <div className="text-lg font-semibold break-all">info@gajo-haustechnik.ch</div>
+                </div>
+              </a>
+              
               <div className="flex items-start gap-5">
                 <div className="w-14 h-14 flex items-center justify-center bg-white/15 rounded-xl flex-shrink-0">
                   <MapPin size={24} className="text-white" />
@@ -238,8 +252,8 @@ export default function KontaktSection() {
                   <p className="text-[oklch(0.65_0.01_250)] text-sm">
                     * Pflichtfelder
                   </p>
-                  <button
-                    type="submit"
+                 <a
+                    href="mailto:info@gajo-haustechnik.ch"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[oklch(0.25_0.09_255)] text-white font-bold px-12 py-5 rounded-xl hover:bg-[oklch(0.20_0.08_255)] transition-all duration-300 shadow-lg shadow-[oklch(0.25_0.09_255)]/20 hover:shadow-xl hover:shadow-[oklch(0.25_0.09_255)]/25 hover:-translate-y-0.5 group"
                   >
                     Jetzt anfragen
@@ -247,7 +261,7 @@ export default function KontaktSection() {
                       size={20}
                       className="group-hover:translate-x-1 transition-transform duration-300"
                     />
-                  </button>
+                  </a>
                 </div>
               </form>
             )}
