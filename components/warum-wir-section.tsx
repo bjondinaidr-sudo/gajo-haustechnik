@@ -64,8 +64,7 @@ export default function WarumWirSection() {
             {/* KPI block */}
             <div className="grid grid-cols-2 gap-1.5 bg-white/[0.06] rounded-2xl p-1.5">
               {[
-                { value: "15+", label: "Jahre Erfahrung" },
-                { value: "Tausende", label: "Zufriedene Kunden" },
+                { value: "12+", label: "Jahre Erfahrung" },
                 { value: "Schnell", label: "Reaktionszeit" },
                 { value: "100%", label: "Qualität" },
               ].map((kpi) => (
