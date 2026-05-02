@@ -83,7 +83,6 @@ export default function HeroSection() {
           <div className="flex flex-wrap gap-14 md:gap-20 mt-24 pt-14 border-t border-white/10 animate-fade-in-up animation-delay-400">
             {[
               { value: "12+", label: "Jahre Erfahrung" },
-              { value: "Tausende", label: "Projekte realisiert" },
               { value: "100%", label: "Qualität" },
             ].map((stat) => (
               <div key={stat.label} className="group">
