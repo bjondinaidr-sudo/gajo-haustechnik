@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import Image from "next/image"
+import { Menu, X, Phone } from "lucide-react"
 
 const navLinks = [
   { label: "Über uns", href: "#ueber-uns" },
@@ -26,43 +27,22 @@ export default function Navigation() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[oklch(0.25_0.09_255)]/98 backdrop-blur-xl shadow-2xl shadow-black/10"
+          ? "bg-[#131F4A]/98 backdrop-blur-xl shadow-lg shadow-[#131F4A]/10"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 py-5">
+        <div className="flex items-center justify-between h-24 py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3.5 group">
-            <div className="flex items-center justify-center w-10 h-10 bg-white/10 border border-white/20 rounded-lg group-hover:bg-white/15 transition-colors duration-300">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 20 20"
-                fill="none"
-                className="text-white"
-              >
-                <path
-                  d="M3 10C3 6.13 6.13 3 10 3s7 3.13 7 7-3.13 7-7 7-7-3.13-7-7z"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                />
-                <path
-                  d="M10 6v4l3 3"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-            <div>
-              <div className="text-white font-bold text-base leading-tight tracking-tight">
-                Gajo Haustechnik
-              </div>
-              <div className="text-white/50 text-[10px] tracking-[0.2em] uppercase font-medium">
-                GmbH
-              </div>
-            </div>
+          <Link href="/" className="flex items-center" aria-label="GAJO Haustechnik – Startseite">
+            <Image
+              src="/Logo.svg"
+              alt="GAJO Haustechnik GmbH"
+              width={200}
+              height={66}
+              priority
+              className="h-18 w-auto"   // 80px
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -71,7 +51,7 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="relative text-white/75 hover:text-white text-sm font-medium tracking-wide transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-white/60 hover:after:w-full after:transition-all after:duration-300"
+                className="relative text-white/80 hover:text-white text-sm font-medium tracking-wide transition-all duration-300 after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#4D8DCC] hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.label}
               </a>
@@ -82,13 +62,14 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-5">
             <a
               href="tel:+41791764392"
-              className="text-white/70 hover:text-white text-sm font-medium transition-colors duration-300"
+              className="flex items-center gap-2 text-white/75 hover:text-white text-sm font-medium transition-colors duration-300"
             >
+              <Phone size={16} className="text-[#4D8DCC]" />
               +41 79 176 43 92
             </a>
             <a
               href="#kontakt"
-              className="bg-white text-[oklch(0.25_0.09_255)] text-sm font-bold px-6 py-3 rounded-lg hover:bg-white/95 hover:shadow-lg hover:shadow-white/10 transition-all duration-300 tracking-wide"
+              className="bg-[#4D8DCC] text-white text-sm font-bold px-6 py-3 rounded-lg hover:bg-[#3d7bb8] hover:shadow-lg hover:shadow-[#4D8DCC]/30 transition-all duration-300 tracking-wide"
             >
               Anfragen
             </a>
@@ -107,7 +88,7 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-[oklch(0.25_0.09_255)] border-t border-white/10 backdrop-blur-xl">
+        <div className="lg:hidden bg-[#131F4A] border-t border-white/10 backdrop-blur-xl">
           <nav className="flex flex-col px-6 py-6 gap-5">
             {navLinks.map((link) => (
               <a
@@ -122,16 +103,17 @@ export default function Navigation() {
             <div className="pt-4 border-t border-white/10 mt-2">
               <a
                 href="tel:+41791764392"
-                className="block text-white/70 text-sm font-medium mb-4"
+                className="flex items-center gap-2 text-white/75 text-sm font-medium mb-4"
               >
+                <Phone size={16} className="text-[#4D8DCC]" />
                 +41 79 176 43 92
               </a>
               <a
                 href="#kontakt"
-                className="bg-white text-[oklch(0.25_0.09_255)] text-sm font-bold px-6 py-3.5 rounded-lg text-center block hover:bg-white/95 transition-all"
+                className="bg-[#4D8DCC] text-white text-sm font-bold px-6 py-3.5 rounded-lg text-center block hover:bg-[#3d7bb8] transition-all"
                 onClick={() => setMobileOpen(false)}
               >
-                Anfragen
+                Jetzt anfragen
               </a>
             </div>
           </nav>
