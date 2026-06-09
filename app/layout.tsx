@@ -9,10 +9,19 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Gajo Haustechnik GmbH | Premium Haustechnik aus Ziegelbrücke',
+  title: 'GAJO Haustechnik GmbH | Ihr Partner für Sanitär- und Haustechniklösungen',
   description:
-    'Gajo Haustechnik GmbH – Ihr zuverlässiger Partner für hochwertige Sanitär-, Heizungs-, Lüftungs- und Wassertechnik in der Schweiz. Präzision und Qualität seit über 15 Jahren.',
-  keywords: 'Haustechnik, Heizung, Sanitär, Lüftung, Wasseraufbereitung, Ziegelbrücke, Schweiz',
+    'GAJO Haustechnik GmbH – Ihr zuverlässiger Partner für Sanitärinstallationen, Wasseraufbereitung, Neu- & Umbauten sowie Service in der Schweiz. Präzision und Qualität aus einer Hand.',
+  keywords:
+    'Sanitär, Sanitärinstallationen, Wasseraufbereitung, Haustechnik, Neubau, Umbau, Service, Wartung, Ziegelbrücke, Schweiz',
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
+}
+
+export const viewport = {
+  themeColor: '#131F4A',
 }
 
 export default function RootLayout({
