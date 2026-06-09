@@ -27,10 +27,10 @@ export default function WarumWirSection() {
   return (
     <section
       id="warum-wir"
-      className="py-36 lg:py-48 bg-gradient-to-b from-[oklch(0.25_0.09_255)] to-[oklch(0.18_0.08_255)] relative overflow-hidden"
+      className="py-28 lg:py-40 bg-gradient-to-b from-[#131F4A] to-[#0C1430] relative overflow-hidden"
     >
       {/* Decorative pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.04]">
         <div
           className="absolute inset-0"
           style={{
@@ -42,15 +42,15 @@ export default function WarumWirSection() {
       </div>
 
       {/* Decorative glow */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#4D8DCC]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-20 lg:gap-28 items-start">
           {/* Left */}
           <div className="space-y-12">
             <div>
-              <div className="inline-flex items-center gap-3 text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-8">
-                <span className="w-10 h-px bg-white/50" />
+              <div className="inline-flex items-center gap-3 text-[#6BA3D8] text-xs font-bold tracking-[0.2em] uppercase mb-8">
+                <span className="w-10 h-px bg-[#4D8DCC]" />
                 Warum wir
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-10 text-balance tracking-tight">
@@ -65,6 +65,7 @@ export default function WarumWirSection() {
             <div className="grid grid-cols-2 gap-1.5 bg-white/[0.06] rounded-2xl p-1.5">
               {[
                 { value: "12+", label: "Jahre Erfahrung" },
+                { value: "100+", label: "Erfolgreiche Projekte" },
                 { value: "Schnell", label: "Reaktionszeit" },
                 { value: "100%", label: "Qualität" },
               ].map((kpi) => (
@@ -92,8 +93,8 @@ export default function WarumWirSection() {
                   key={reason.title}
                   className="group p-8 lg:p-10 rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.03] hover:from-white/15 hover:to-white/[0.06] transition-all duration-500 space-y-5 hover:-translate-y-1"
                 >
-                  <div className="w-14 h-14 flex items-center justify-center bg-white/15 rounded-xl group-hover:bg-white/25 group-hover:scale-110 transition-all duration-300">
-                    <Icon size={26} className="text-white" strokeWidth={1.5} />
+                  <div className="w-14 h-14 flex items-center justify-center bg-[#4D8DCC]/20 rounded-xl group-hover:bg-[#4D8DCC] group-hover:scale-110 transition-all duration-300">
+                    <Icon size={26} className="text-[#6BA3D8] group-hover:text-white transition-colors duration-300" strokeWidth={1.6} />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
