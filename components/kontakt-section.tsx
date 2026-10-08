@@ -14,11 +14,14 @@ const services = [
 export default function KontaktSection() {
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
+name: "",
+  email: "",
+  phone: "",
+  service: "",
+  address: "",
+  plz: "",
+  city: "",
+  message: "",
   })
 
   const handleChange = (
