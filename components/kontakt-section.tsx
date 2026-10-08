@@ -217,7 +217,72 @@ export default function KontaktSection() {
                     </select>
                   </div>
                 </div>
+ {/* Adresse */}
+                <div className="flex flex-col gap-2.5">
+                  <label
+                    htmlFor="address"
+                    className="text-xs font-bold text-[#131F4A] uppercase tracking-[0.1em]"
+                  >
+                    Adresse *
+                  </label>
+                  <input
+                    id="address"
+                    name="address"
+                    type="text"
+                    required
+                    autoComplete="street-address"
+                    value={form.address}
+                    onChange={handleChange}
+                    placeholder="Spinnereistrasse 8"
+                    className={inputClass}
+                  />
+                </div>
 
+                {/* PLZ + Stadt */}
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col gap-2.5">
+                    <label
+                      htmlFor="plz"
+                      className="text-xs font-bold text-[#131F4A] uppercase tracking-[0.1em]"
+                    >
+                      PLZ *
+                    </label>
+                    <input
+                      id="plz"
+                      name="plz"
+                      type="text"
+                      required
+                      inputMode="numeric"
+                      pattern="[0-9]{4}"
+                      maxLength={4}
+                      autoComplete="postal-code"
+                      title="Bitte eine 4-stellige Postleitzahl eingeben"
+                      value={form.plz}
+                      onChange={handleChange}
+                      placeholder="8866"
+                      className={inputClass}
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2.5">
+                    <label
+                      htmlFor="city"
+                      className="text-xs font-bold text-[#131F4A] uppercase tracking-[0.1em]"
+                    >
+                      Stadt *
+                    </label>
+                    <input
+                      id="city"
+                      name="city"
+                      type="text"
+                      required
+                      autoComplete="address-level2"
+                      value={form.city}
+                      onChange={handleChange}
+                      placeholder="Ziegelbrücke"
+                      className={inputClass}
+                    />
+                  </div>
+                </div>
                 <div className="flex flex-col gap-2.5">
                   <label
                     htmlFor="message"
